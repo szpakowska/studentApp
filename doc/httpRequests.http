@@ -1,0 +1,8 @@
+
+### Get all students
+GET localhost:8080/students
+
+
+### Post student
+POST http://localhost:8080/students?firstName=Kleofas
+

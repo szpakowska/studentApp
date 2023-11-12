@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
+
 public class StudentModel {
 
     @Id
@@ -26,4 +27,13 @@ public class StudentModel {
     @Column(name = "start")
     private String start;
 
+    public StudentModel() {
+    }
+
+    public StudentModel(String firstName, String lastName, String gitHub, String start) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gitHub = gitHub;
+        this.start = start;
+    }
 }

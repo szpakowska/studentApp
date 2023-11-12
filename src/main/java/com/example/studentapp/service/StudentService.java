@@ -14,7 +14,8 @@ public class StudentService {
     private final StudentRepository studentRepository;
 
 
-    public void addStudent(StudentModel student) {
+    public void addStudent(String firstName, String lastName, String github, String start) {
+        StudentModel student = new StudentModel(firstName, lastName, github, start);
         studentRepository.save(student);
     }
 
