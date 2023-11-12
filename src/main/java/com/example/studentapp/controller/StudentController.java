@@ -9,11 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @Slf4j
 public class StudentController {
@@ -22,10 +23,9 @@ public class StudentController {
 
 
     @GetMapping("/students")
-    public String getStudentList(Model model) {
-        List<StudentModel> studentList = studentService.getStudentList();
-        model.addAttribute("studentModel", studentList);
-        return "persons/personList";
+    public List<StudentModel> getStudentList() {
+        return studentService.getStudentList();
+
     }
 
     @GetMapping("/addStudent")
